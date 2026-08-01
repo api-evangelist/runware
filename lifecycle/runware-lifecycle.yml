@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/changelog ; https://status.runware.ai ; https://runware.ai/docs/platform/introduction
+versioning:
+  scheme: model-and-date-based
+  current: v1
+  path: /v1
+  docs: https://runware.ai/docs/changelog
+  note: >-
+    The HTTP endpoint is versioned at /v1; capability evolution happens through
+    dated changelog entries and model identifiers (creator:family@version) with
+    variant designations (Pro/Lite/Fast/Standard).
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support documented at the probe date.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.runware.ai
+changelog: https://runware.ai/docs/changelog
+deprecated_operations: []

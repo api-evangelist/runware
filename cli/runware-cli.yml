@@ -1,0 +1,62 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/platform/cli
+name: runware
+type: static-binary
+repo: https://github.com/Runware
+install:
+- platform: macos
+  method: homebrew
+  command: brew install --cask runware/tap/runware
+- platform: windows
+  method: scoop
+  command: scoop bucket add runware https://github.com/Runware/scoop-bucket.git && scoop install runware
+- platform: linux
+  method: curl
+  command: curl -fsSL https://cli.runware.ai/install.sh | sh
+- platform: source
+  method: make
+  command: make build
+commands:
+- name: run
+  description: Execute inference on models.
+- name: model
+  description: Search and inspect the model catalog (search, schema, pricing).
+- name: preset
+  description: Manage saved parameter configurations.
+- name: media
+  description: Upload inputs and manage media storage.
+- name: result
+  description: Resume interrupted long-running tasks.
+- name: auth
+  description: Handle authentication and API keys.
+- name: account
+  description: View account details and balance.
+- name: config
+  description: Manage CLI settings.
+- name: completion
+  description: Generate shell completion scripts.
+key_flags:
+- flag: -F, --format
+  description: Output format — table (default), json, or yaml.
+- flag: --transport
+  description: Connection method — ws (WebSocket, default) or http.
+- flag: --task-type
+  description: Explicitly specify task type when auto-detection fails.
+- flag: --output-dir
+  description: Directory for downloaded results.
+- flag: --no-download
+  description: Print URLs instead of downloading.
+- flag: --validate
+  description: Check parameters against schema before submission.
+- flag: -v, --verbose
+  description: Show request/response details.
+example_flows:
+- purpose: Basic image generation
+  command: runware run runware:400@1 positivePrompt="A serene mountain landscape" width=1024 height=1024
+- purpose: Model search and inspection
+  command: runware model search -q "flux"
+- purpose: Preset save and reuse
+  command: runware preset save quick-flux runware:100@1 width=512 height=512
+- purpose: Media upload
+  command: runware media upload ./photo.jpg

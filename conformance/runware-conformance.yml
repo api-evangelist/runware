@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/security-disclosure ; runware.ai footer
+standards:
+- id: iso-27001
+  conforms: true
+  evidence: "Runware states ISO 27001 Certified (security-disclosure page / site footer)."
+- id: soc2
+  conforms: true
+  evidence: "Runware states SOC 2 Certified (security-disclosure page / site footer)."
+- id: gdpr
+  conforms: true
+  evidence: "Runware states GDPR Compliant with EU & US data residency."
+- id: oauth2
+  conforms: true
+  evidence: "Hosted MCP server authenticates with OAuth 2.1 + PKCE (docs/platform/mcp)."
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: "Errors use a structured {code,message} envelope, not application/problem+json."
+- id: fhir-r4
+  conforms: false
+- id: fapi
+  conforms: false
+- id: scim
+  conforms: false

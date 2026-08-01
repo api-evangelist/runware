@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://runware.ai/docs/platform/mcp
+server:
+  name: runware
+  transport: http
+  url: https://mcp.runware.ai
+  hosting: hosted-remote
+  auth: OAuth 2.1 with PKCE (API key provided via server-rendered page)
+local_alternative:
+  install: npx -y @runware/mcp
+  env: [RUNWARE_API_KEY]
+  package: "@runware/mcp"
+tools:
+- name: run
+  category: generate
+  description: Execute any Runware task (image/video/audio generation, upscaling, background removal, training).
+- name: list_models
+  category: browse
+  description: Filter models by capability, category, or creator.
+- name: model_details
+  category: browse
+  description: Retrieve full metadata for a specific model.
+- name: model_examples
+  category: browse
+  description: View curated prompt and output samples for a model.
+- name: model_pricing
+  category: browse
+  description: Look up pricing information for a model.
+- name: list_capabilities
+  category: browse
+  description: Discover available task types.
+- name: model_schema
+  category: inspect
+  description: Fetch JSON Schema for a model's parameter validation.
+- name: get_task_details
+  category: inspect
+  description: Retrieve previously submitted task results.

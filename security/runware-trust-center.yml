@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://runware.ai/security-disclosure ; runware.ai footer
+url: https://runware.ai/security-disclosure
+certifications:
+- ISO 27001
+- SOC 2
+- GDPR
+data_residency:
+- EU
+- US
+evidence:
+- {source: https://runware.ai/security-disclosure, keywords: [iso 27001, soc 2, gdpr, data residency]}
+notes: >-
+  Runware advertises ISO 27001 and SOC 2 certification and GDPR compliance with
+  EU & US data residency. No dedicated trust.runware.ai portal was found at the
+  probe date; these certifications are published on the security-disclosure page
+  and the site footer.

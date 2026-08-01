@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/platform/typescript ; npm ; PyPI
+packages:
+- language: typescript
+  registry: npm
+  name: "@runware/sdk"
+  url: https://www.npmjs.com/package/@runware/sdk
+  install: npm install @runware/sdk
+  version: 1.6.7
+  official: true
+  notes: Official TypeScript/JavaScript SDK for Node, Bun, Deno, and edge runtimes.
+- language: python
+  registry: pypi
+  name: runware
+  url: https://pypi.org/project/runware/
+  install: pip install runware
+  version: 0.5.24
+  official: true
+  source_repo: https://github.com/runware/sdk-python
+- language: javascript
+  registry: npm
+  name: "@runware/mcp"
+  url: https://www.npmjs.com/package/@runware/mcp
+  install: npx -y @runware/mcp
+  official: true
+  notes: Local Model Context Protocol server (alternative to the hosted mcp.runware.ai).
+- language: javascript
+  registry: npm
+  name: "@runware/ai-sdk-provider"
+  url: https://www.npmjs.com/package/@runware/ai-sdk-provider
+  install: npm install @runware/ai-sdk-provider
+  official: true
+  notes: Vercel AI SDK provider for Runware inference.
+- language: binary
+  registry: homebrew
+  name: runware
+  url: https://github.com/Runware
+  install: brew install --cask runware/tap/runware
+  official: true
+  notes: Static-binary CLI (also via Scoop and curl installer). Command surface catalogued in cli/runware-cli.yml.

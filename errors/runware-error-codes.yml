@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/platform/introduction (error handling & resilience)
+envelope:
+  description: >-
+    Failed requests return a structured error object carrying a stable `code`
+    value that identifies the error class, alongside the taskUUID of the failing
+    task so errors can be matched to their request in a batch.
+  fields: [code, message, taskUUID]
+retry_guidance:
+  strategy: exponential backoff
+  retryable_status_codes:
+  - status: 429
+    meaning: Too Many Requests — request queued/throttled under load.
+    action: Retry with exponential backoff.
+  - status: 503
+    meaning: Service Unavailable — transient capacity/queue condition.
+    action: Retry with exponential backoff.
+notes: >-
+  Runware documents stable error `code` values and retryable statuses but does
+  not publish a full enumerated error-code registry or RFC 9457 problem+json
+  responses at the probe date. This captures the documented error contract; a
+  richer catalog can be harvested if the provider publishes an error reference.

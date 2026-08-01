@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/changelog
+scheme: date-based
+current_version: rolling
+notes: >-
+  Runware uses a date-based, model-oriented changelog rather than semantic
+  versioning; entries announce new/updated models and platform capabilities,
+  newest first. Recent window captured below.
+entries:
+- date: '2026-07-17'
+  title: Reve 2.1
+  type: addition
+  highlights: >-
+    Native 4K generation with layout-aware structure for denser scenes; supports
+    up to 8 reference images for guided generation workflows.
+- date: '2026-07-13'
+  title: BytePlus Video Enhancement
+  type: addition
+  highlights: >-
+    Video upscaling up to 4K at 120 FPS with frame interpolation, denoise, and
+    HDR enhancement (Standard and Pro variants).
+- date: '2026-07-10'
+  title: Account Usage Analytics API
+  type: addition
+  highlights: >-
+    New API for querying usage metrics — spend over a date range, broken down by
+    day, model, or API key.
+- date: '2026-07-08'
+  title: Seedream 5.0 Pro
+  type: addition
+  highlights: >-
+    Supports up to 10 reference images per generation with exact output
+    dimension control and 1K/2K output targets.

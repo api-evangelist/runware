@@ -1,0 +1,39 @@
+# Runware
+
+> Runware is a unified AI inference platform — "one API for all AI" — exposing a single task-based endpoint for image, video, audio, 3D, and text (LLM) generation across 400K+ open and closed-source models. Requests are task objects (taskType, taskUUID, model identifier, parameters) posted over HTTP, WebSocket, or Server-Sent Events. Models are addressed as creator:family@version and billed pay-per-request. Official TypeScript and Python SDKs, a CLI, a hosted MCP server, and Agent Skills reach the same surface.
+
+## APIs
+
+- [Runware Inference API](https://runware.ai/docs/platform/introduction): Single endpoint (https://api.runware.ai/v1) for image, video, audio, 3D, and text inference. Auth via API key.
+
+## Docs
+
+- [Documentation home](https://runware.ai/docs)
+- [Platform introduction](https://runware.ai/docs/platform/introduction)
+- [Authentication](https://runware.ai/docs/platform/authentication)
+- [TypeScript SDK](https://runware.ai/docs/platform/typescript)
+- [Python SDK](https://runware.ai/docs/platform/python)
+- [CLI](https://runware.ai/docs/platform/cli)
+- [MCP server](https://runware.ai/docs/platform/mcp)
+- [Agent Skills](https://runware.ai/docs/platform/skills)
+- [Vercel AI SDK provider](https://runware.ai/docs/platform/vercel-ai)
+- [OpenAI compatibility](https://runware.ai/docs/platform/openai)
+- [Changelog](https://runware.ai/docs/changelog)
+- [Model schemas index](https://runware.ai/docs/models/index.json)
+- [Full docs as llms.txt (verbatim)](https://runware.ai/docs/llms.txt)
+
+## Packages
+
+- [@runware/sdk (npm)](https://www.npmjs.com/package/@runware/sdk): Official TypeScript/JavaScript SDK
+- [runware (PyPI)](https://pypi.org/project/runware/): Official Python SDK
+- [@runware/mcp (npm)](https://www.npmjs.com/package/@runware/mcp): Local MCP server
+- [@runware/ai-sdk-provider (npm)](https://www.npmjs.com/package/@runware/ai-sdk-provider): Vercel AI SDK provider
+
+## Resources
+
+- [Pricing](https://runware.ai/pricing)
+- [Sign up](https://runware.ai/signup)
+- [Status](https://status.runware.ai)
+- [Security disclosure](https://runware.ai/security-disclosure)
+- [GitHub](https://github.com/Runware)
+- [Discord](https://discord.gg/aJ4UzvBqNU)

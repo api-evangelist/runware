@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/platform/skills
+standard: Agent Skills (open standard, SKILL.md folders)
+description: >-
+  Runware publishes first-party Agent Skills following the open Agent Skills
+  standard — each is a folder with a SKILL.md file whose frontmatter name +
+  description trigger agent matching. Skills operate through existing Runware
+  access (SDK / MCP / CLI); there is no new endpoint to host. Installable in
+  Claude Code, Claude.ai, Cursor (.cursor/skills/), OpenClaw, or any agent
+  (.agents/skills/).
+install:
+  claude_code: Register the Runware marketplace and install the skills plugin.
+  claude_ai: Customize -> Skills -> upload the skill folder.
+  cursor: Copy folders into .cursor/skills/
+  any_agent: Drop folders in .agents/skills/ (or ~/.agents/skills/ globally)
+skills:
+- name: product-photography
+  category: image
+- name: character-consistency
+  category: image
+- name: text-in-image
+  category: image
+- name: edit-image
+  category: image
+- name: restore-and-upscale
+  category: image
+- name: logos-and-vectors
+  category: image
+- name: product-ad-video
+  category: video
+- name: ugc-ad
+  category: video
+- name: animate-image
+  category: video
+- name: talking-avatar
+  category: video
+- name: video-upscale
+  category: video
+- name: image-to-3d-asset
+  category: 3d
+- name: voiceover
+  category: audio
+- name: music
+  category: audio
+- name: vision-understanding
+  category: text
+- name: train-style-model
+  category: custom
+- name: bring-your-own-model
+  category: custom

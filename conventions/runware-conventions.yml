@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/platform/introduction ; https://runware.ai/docs/platform/authentication
+authentication:
+  style: api-key
+  transport: Authorization Bearer header (HTTP) or authentication task (WebSocket)
+  ref: authentication/runware-authentication.yml
+request_model:
+  style: task-based
+  description: >-
+    Every request is one or more task objects in a JSON array. Each task carries
+    a taskType (imageInference, videoInference, audioInference, 3dInference,
+    textInference, and utility tasks such as upscaling / background removal),
+    a client-supplied taskUUID (v4), a model identifier (creator:family@version),
+    and modality-specific parameters. Multiple tasks may be batched in one call.
+  endpoint: https://api.runware.ai/v1
+  transports: [http, websocket, sse]
+request_tracing:
+  field: taskUUID
+  description: >-
+    Client-generated v4 UUID echoed back on every response so batched and
+    asynchronous results can be matched to their originating task.
+delivery_modes:
+  - mode: sync
+    description: Waits for the full response in a single round trip.
+  - mode: async
+    description: Returns immediately with a task UUID; the client polls results via getResponse.
+  - mode: stream
+    description: Token-by-token SSE delivery for text inference.
+idempotency:
+  supported: partial
+  mechanism: client-supplied taskUUID
+  note: >-
+    taskUUID is a client-generated request identifier used to correlate
+    responses; Runware does not document a dedicated Idempotency-Key retry
+    contract. Not asserted as full idempotency support.
+pagination:
+  style: none-documented
+  note: The single inference endpoint is task-based and does not expose list pagination; model search is handled by the CLI/MCP browse tools.
+rate_limiting:
+  style: dynamic-queue
+  note: >-
+    Uses a dynamic queue-based system rather than hard rate limits; degrades
+    gracefully under load. Retryable errors (429, 503) should be retried with
+    exponential backoff.
+error_envelope:
+  shape: structured error with a stable `code` value
+  retryable_codes: [429, 503]
+  ref: errors/runware-error-codes.yml
+versioning:
+  scheme: model-and-date-based
+  note: The HTTP path is /v1; individual capabilities version through model identifiers (creator:family@version) and dated changelog entries.
+  ref: lifecycle/runware-lifecycle.yml

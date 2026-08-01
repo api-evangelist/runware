@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of https://runware.ai and https://api.runware.ai
+hosts:
+- host: https://runware.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.runware.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on either the website or
+  API host as of the probe date. Absence is valid, expected data. The hosted MCP
+  server (mcp.runware.ai) advertises OAuth 2.1 with PKCE but does not expose a
+  public oauth-authorization-server document at the probed hosts.

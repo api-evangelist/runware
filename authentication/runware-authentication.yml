@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://runware.ai/docs/platform/authentication ; https://runware.ai/docs/platform/mcp
+docs: https://runware.ai/docs/platform/authentication
+summary:
+  types: [apiKey, oauth2]
+  api_key_in: [header, body]
+  oauth2_flows: [authorizationCode-pkce]
+schemes:
+- name: apiKey
+  type: apiKey
+  description: >-
+    API key created in the Runware dashboard. Sent as a Bearer token on HTTP
+    requests, or as an authentication task at the start of a WebSocket session.
+  in: header
+  header: Authorization
+  format: Bearer <RUNWARE_API_KEY>
+  websocket_note: >-
+    WebSocket connections require an initial authentication task carrying the API
+    key; the socket stays open until 120 seconds of inactivity.
+- name: mcp-oauth
+  type: oauth2
+  scheme: OAuth 2.1 with PKCE
+  description: >-
+    The hosted MCP server (mcp.runware.ai) authenticates clients with OAuth 2.1
+    + PKCE; the user supplies their Runware API key through a server-rendered
+    page rather than passing it directly to the MCP client.
+  applies_to: mcp.runware.ai
+notes: >-
+  No public OpenAPI is published (the API is a single task-based POST endpoint),
+  so this profile is searched from the documentation rather than derived from a
+  spec. There is no OAuth scope surface on the core inference API — access is
+  key-based — so scopes/ is intentionally omitted.
