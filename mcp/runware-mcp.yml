@@ -10,12 +10,14 @@ server:
   auth: OAuth 2.1 with PKCE (API key provided via server-rendered page)
 local_alternative:
   install: npx -y @runware/mcp
-  env: [RUNWARE_API_KEY]
-  package: "@runware/mcp"
+  env:
+  - RUNWARE_API_KEY
+  package: '@runware/mcp'
 tools:
 - name: run
   category: generate
-  description: Execute any Runware task (image/video/audio generation, upscaling, background removal, training).
+  description: Execute any Runware task (image/video/audio generation, upscaling, background removal,
+    training).
 - name: list_models
   category: browse
   description: Filter models by capability, category, or creator.
@@ -37,3 +39,10 @@ tools:
 - name: get_task_details
   category: inspect
   description: Retrieve previously submitted task results.
+deployment:
+  mode: remote
+  endpoint: https://mcp.runware.ai
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
