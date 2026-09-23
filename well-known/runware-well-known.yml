@@ -1,4 +1,4 @@
-generated: '2026-07-21'
+generated: '2026-09-19'
 method: searched
 source: live probes of https://runware.ai and https://api.runware.ai
 hosts:
@@ -18,8 +18,33 @@ hosts:
     status: 404
   - path: /.well-known/api-catalog
     status: 404
-notes: >-
-  No /.well-known/ discovery documents are published on either the website or
-  API host as of the probe date. Absence is valid, expected data. The hosted MCP
-  server (mcp.runware.ai) advertises OAuth 2.1 with PKCE but does not expose a
-  public oauth-authorization-server document at the probed hosts.
+- host: https://mcp.runware.ai
+  documents:
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: runware-mcp-oauth-protected-resource.json
+    bytes: 126
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: runware-mcp-oauth-authorization-server.json
+    bytes: 580
+  path_echo_control: passed
+notes: No /.well-known/ discovery documents are published on either the website or API host as of the
+  probe date. Absence is valid, expected data. The hosted MCP server (mcp.runware.ai) advertises OAuth
+  2.1 with PKCE but does not expose a public oauth-authorization-server document at the probed hosts.
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://mcp.runware.ai
+    path: /.well-known/oauth-protected-resource
+    file: runware-mcp-oauth-protected-resource.json
+  - host: https://mcp.runware.ai
+    path: /.well-known/oauth-authorization-server
+    file: runware-mcp-oauth-authorization-server.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'
