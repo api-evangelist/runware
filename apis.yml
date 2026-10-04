@@ -52,9 +52,9 @@ modified: '2026-07-21'
 tags:
 - Company
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Inference
-- Image-Generation
+- Image Generation
 - Video Generation
 - Audio Generation
 - Text Generation
@@ -75,6 +75,8 @@ tags_raw:
 - Generative AI
 - Models
 - Developer Tools
+- Machine-Learning
+- Image-Generation
 apis:
 - name: Runware Inference API
   description: >-
@@ -84,7 +86,7 @@ apis:
   baseURL: https://api.runware.ai/v1
   tags:
   - Inference
-  - Image-Generation
+  - Image Generation
   - Video Generation
   - Generative AI
   tags_raw:
@@ -92,6 +94,7 @@ apis:
   - Image Generation
   - Video Generation
   - Generative AI
+  - Image-Generation
   properties:
   - type: Documentation
     url: https://runware.ai/docs
