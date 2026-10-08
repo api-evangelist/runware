@@ -1,0 +1,88 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://runware.ai/pricing
+sources:
+- https://runware.ai/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Pay-as-you-go rate sheet for managed inference (395 priced models shown, 50 per page) plus serverless/reserved
+  GPU per-second and per-hour rates. Volume discounts via contact sales.
+plan_count: 10
+currency: USD
+plans:
+- name: Nano Banana 2.1 (image, input tokens)
+  price_text: $1 . 50 / 1M tokens
+  price: 1.5
+  currency: USD
+  period: per-use
+  unit: 1M tokens
+- name: Ideogram 4.5 (image, Very low)
+  price_text: $0 . 008 / image
+  price: 0.008
+  currency: USD
+  period: per-use
+  unit: image
+- name: GLM-5.3-Flash (text, input tokens)
+  price_text: $0 . 15 / 1M tokens
+  price: 0.15
+  currency: USD
+  period: per-use
+  unit: 1M tokens
+- name: Grok Imagine Video 1.5 Lite (480p)
+  price_text: $0 . 02 / second
+  price: 0.02
+  currency: USD
+  period: per-use
+  unit: second
+- name: Serverless L40s (per hour)
+  price_text: $1.60
+  price: 1.6
+  currency: USD
+  period: per-use
+  unit: GPU-hour
+  included_quota: 48 GB GDDR6; $0.000444 per second
+- name: Serverless H100 (per hour)
+  price_text: $3.95
+  price: 3.95
+  currency: USD
+  period: per-use
+  unit: GPU-hour
+  included_quota: 80 GB HBM3; $0.001097 per second; reserved as low as $2.45 / GPU -hour
+- name: Serverless B200 (per hour)
+  price_text: $6.00
+  price: 6.0
+  currency: USD
+  period: per-use
+  unit: GPU-hour
+  included_quota: 180 GB HBM3e; $0.001667 per second
+- name: GB300 NVL72
+  price_text: Contact
+  period: none
+  included_quota: Rack-scale Blackwell Ultra; Scoped with our engineers
+- name: CPU
+  price_text: $0.05
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: hour per physical core (2 vCPU equivalent)
+  included_quota: $0.000013 per second
+- name: Free credits (new users)
+  price_text: $2 in free credits
+  price: 2
+  currency: USD
+  period: one-time
+  unit: credits
+  included_quota: New users who sign up with a business email
+rate_limit_statements:
+- Does my usage count if I get rate-limited? No. You are only charged for successful API requests that
+  generate outputs.
